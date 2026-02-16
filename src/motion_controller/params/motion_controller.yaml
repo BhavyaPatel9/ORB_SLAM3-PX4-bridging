@@ -1,0 +1,27 @@
+# Parameters for motion_controller
+motion_controller:
+  ros__parameters:
+
+    # Topics
+    in_topic: "/cmd_vel_safe"
+    out_topic: "/cmd_vel"
+
+    # Control rate (Hz)
+    control_rate: 20.0
+
+    # Velocity limits
+    max_linear_vel: 1.5          # m/s
+    max_angular_vel: 1.0         # rad/s
+
+    # Acceleration limits
+    max_linear_accel: 2.0        # m/s^2
+    max_angular_accel: 2.0       # rad/s^2
+
+    # Hold altitude (disable vertical control)
+    hold_z: true
+
+    # Watchdog timeout (seconds)
+    watchdog_timeout: 0.5
+
+    # Publish zero on startup
+    publish_zero_on_start: true

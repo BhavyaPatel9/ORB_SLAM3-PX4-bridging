@@ -1,0 +1,26 @@
+
+<?xml version="1.0"?>
+<package format="3">
+  <name>motion_controller</name>
+  <version>0.0.0</version>
+  <description>Motion controller: clamps, slew-limits and watchdogs Twist commands for PX4 integration.</description>
+
+  <maintainer email="spitze.com">spitze</maintainer>
+  <license>BSD-3-Clause</license>
+
+  <!-- build tool for ament_python packages -->
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- runtime / API dependencies -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+
+  <!-- launch / ament helper deps (optional at runtime) -->
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

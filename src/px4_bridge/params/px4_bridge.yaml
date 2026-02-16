@@ -1,0 +1,29 @@
+# Parameters for px4_bridge
+px4_bridge:
+  ros__parameters:
+
+    # Input topics
+    cmd_vel_topic: "/cmd_vel"                       # from motion_controller
+    vehicle_status_topic: "/fmu/out/vehicle_status"
+    vehicle_attitude_topic: "/fmu/out/vehicle_attitude"
+
+    # Offboard publishing / streaming
+    offboard_rate: 50.0         # Hz (how fast OffboardControlMode + setpoints are published)
+    control_rate: 50.0          # alias for offboard_rate if your node expects control_rate
+
+    # Watchdog / timeouts (seconds)
+    watchdog_timeout: 0.5       # used by versions expecting "watchdog_timeout"
+    cmd_timeout: 0.5            # used by versions expecting "cmd_timeout"
+
+    # Auto-enable OFFBOARD when a cmd is received
+    enable_on_cmd: true
+    publish_zero_after_timeout: true
+
+    # Safety / behavior tuning
+    min_offboard_rate: 2.0      # PX4 requires >2Hz stream to stay in offboard
+    zero_burst_count: 3         # how many zero setpoints to publish on shutdown/timeout
+
+    # Backwards-compatible parameter names (if earlier node expects these)
+    OFFBOARD_PUBLISH_RATE: 50.0
+    WATCHDOG_TIMEOUT: 0.5
+    OFFBOARD_ENABLE_ON_CMD: true
